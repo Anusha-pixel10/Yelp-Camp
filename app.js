@@ -21,10 +21,6 @@ const MongoDBStore = require("connect-mongo")(session);
 
 const dbUrl = process.env.DB_URL;
 
-// mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp-maptiler')
-//     .then(() => console.log("Database connected"))
-//     .catch(err => console.error("Connection error:", err));
-
 mongoose.connect(dbUrl)
     .then(() => console.log("Database connected"))
     .catch(err => console.error("Connection error:", err));
