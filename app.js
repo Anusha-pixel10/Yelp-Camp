@@ -19,7 +19,7 @@ const campgroundsRoutes = require('./routes/campgrounds');
 const reviewsRoutes = require('./routes/reviews');
 const MongoDBStore = require("connect-mongo")(session);
 
-const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/yelp-camp-maptiler';
+const dbUrl = process.env.DB_URL;
 
 // mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp-maptiler')
 //     .then(() => console.log("Database connected"))
@@ -29,6 +29,8 @@ mongoose.connect(dbUrl)
     .then(() => console.log("Database connected"))
     .catch(err => console.error("Connection error:", err));
 
+
+console.log(process.env.MONGO_URI);
 
 const app = express();
 app.set('query parser', 'extended');
