@@ -44,7 +44,7 @@ app.use(express.static('public'));
 
 /*SESSION/AUTH*/
 const store = new MongoDBStore({
-    url: 'mongodb://127.0.0.1:27017/yelp-camp-maptiler',
+    url: dbUrl,
     secret: 'thisshouldbeabettersecret',
     touchAfter: 24 * 60 * 60
 });
